@@ -25,7 +25,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
              
-                    echo "deployed"
+                    sh "mvn deploy"
                 }
             
         }
