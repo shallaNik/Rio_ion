@@ -10,11 +10,7 @@ pipeline {
             steps {
                     sh 'mvn clean compile'
                 }
-            steps {
-                    sh 'mvn clean install'   
-               }
         }
-
         stage ('Testing Stage') {
 
             steps {
@@ -25,6 +21,11 @@ pipeline {
                     junit 'target/surefire-reports/**/*.xml' 
                 }
             }
+       }
+       stage ('building war file'){
+            steps {
+                    sh 'mvn clean install'   
+               }
         }
 
 
