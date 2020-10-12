@@ -32,7 +32,7 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
              
-                    sh "mvn tomcat:deploy"
+                    sh "mvn deploy"
                 }
             
         }
